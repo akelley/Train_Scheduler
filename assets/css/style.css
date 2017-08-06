@@ -1,5 +1,39 @@
 body {
-	background-color: #FFF8DC;
-	overflow: hidden;
+	background-color: Wheat;
 }
 
+.jumbotron {
+	font-family: 'Fira Mono', monospace;
+	margin: 0px 0px 20px 0px;
+	padding: 2px 0px 2px 0px;
+	background-color: Sienna;
+	color: Cornsilk;
+	height: 80px;
+}
+
+.panel-default {
+	border-radius: 5px;
+}
+
+
+.btn-default {
+	background-color: Sienna;
+	color: Cornsilk;
+}
+
+table {
+	width: 100%;
+  border-spacing: 5px;
+}
+
+thead {
+	font-size: 1em;
+	font-weight: bolder;
+	border-bottom: 2px solid black;
+
+}
+
+th, td {
+	padding: 5px 0 5px 0;
+	border-bottom: 1px solid grey;
+}

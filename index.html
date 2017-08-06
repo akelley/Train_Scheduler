@@ -4,41 +4,75 @@
 	<meta charset="UTF-8">
 	<title>Train Scheduler</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link href="https://fonts.googleapis.com/css?family=Maven+Pro:900" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="https://www.gstatic.com/firebasejs/live/3.0/firebase.js">
-	<link rel="icon" href="http://static1.squarespace.com/static/569f664a841abaccb7cb0241/t/58d1e9b5b3db2b27db5333d3/1490151862166/favicon.png?format=1000w">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> 
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<link rel="icon" href="https://www.rail-info.in/images/favicon.png">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
    	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 <body>
-	<div class="row">
-		<div class="col-lg-1"></div>
-			<div class="col-lg-7">
-				<div id="gif-output">
-					<ul id="gif-list"></ul>
-				</div>
-			</div>
-			
-			<div class="col-lg-3">
-				<div id="sidebar">   
-					<h4>What kind of GIFs do you want?</h4>
-					<form id="gif-form">
-						<input id="gif-entry" type="text"/>
-						<button id="gif-submit" type="submit">SUBMIT</button>
-						<button id="gif-clear" type="clear">CLEAR</button>
-						<button id="gif-add" type="add">ADD</button>
-					</form>
-					
-					<div id="gif-buttons">
-						<div id="gif-button-group"></div>
-					</div>
-				</div>
-			</div>
-		<div class="col-lg-1"></div>
-	</div>
-	
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center">TRAIN SCHEDULER</h2>
+		</div>
 
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Current Train Schedule</h3>
+					</div>
+
+					<div class="panel-body">
+						<table id="train-table">
+							<thead>
+							  <tr>
+							     <th>Train Name:</th>
+							     <th>Destination:</th>
+							     <th>Frequency (min):</th>
+							     <th>Next Arrival:</th>
+							     <th>Minutes Away:</th>
+							  </tr>
+							</thead>
+							<tbody id="train-tbody"></tbody>
+						</table>
+					</div>	
+				</div>
+			</div>
+
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Add Train</h3>
+			</div>
+
+			<div class="panel-body">
+						<form role="form">
+							<div class="form-group">
+								<label for="text">Train Name: </label>
+								<input type="text" class="form-control" id="nameInput">
+							</div>
+							<div class="form-group">
+								<label for="text">Destination: </label>
+								<input type="text" class="form-control" id="destInput">
+							</div>
+							<div class="form-group">
+								<label for="text">First Train Time (HH:mm - military time): </label>
+								<input type="text" class="form-control" id="firstInput">
+							</div>
+							<div class="form-group">
+								<label for="text">Frequency (min): </label>
+								<input type="number" class="form-control" id="freqInput">
+							</div>
+							<button type="submit" class="btn btn-default" id="addTrain">Submit</button>
+						</form>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer class="footer">
 		<div class="two-toned-footer-color"></div>
